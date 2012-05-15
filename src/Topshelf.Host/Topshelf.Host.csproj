@@ -93,14 +93,8 @@
     <Reference Include="log4net" Condition="'$(TargetFrameworkVersion)' == 'v4.0'">
       <HintPath>..\..\lib\log4net\net40-full\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Topshelf" Condition="'$(TargetFrameworkVersion)' == 'v3.5'">
-      <HintPath>..\..\build_output\net35\Topshelf.dll</HintPath>
-    </Reference>
     <Reference Include="Topshelf" Condition="'$(TargetFrameworkVersion)' == 'v4.0'">
       <HintPath>..\..\build_output\net40\Topshelf.dll</HintPath>
-    </Reference>
-    <Reference Include="Topshelf.Log4NetIntegration" Condition="'$(TargetFrameworkVersion)' == 'v3.5'">
-      <HintPath>..\..\build_output\net35\Topshelf.Log4NetIntegration.dll</HintPath>
     </Reference>
     <Reference Include="Topshelf.Log4NetIntegration" Condition="'$(TargetFrameworkVersion)' == 'v4.0'">
       <HintPath>..\..\build_output\net40\Topshelf.Log4NetIntegration.dll</HintPath>
@@ -128,9 +122,17 @@
     <Content Include="tsicon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TopShelf.NancyDashboard\TopShelf.NancyDashboard.csproj" Condition="'$(TargetFrameworkVersion)' == 'v4.0'">
+    <ProjectReference Include="..\Loggers\Topshelf.Log4NetIntegration\Topshelf.Log4NetIntegration.csproj">
+      <Project>{709D3896-BE22-423F-81E9-F557559E45F0}</Project>
+      <Name>Topshelf.Log4NetIntegration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TopShelf.NancyDashboard\TopShelf.NancyDashboard.csproj">
       <Project>{3802253E-6CE8-427C-B267-1D5F609140C6}</Project>
       <Name>TopShelf.NancyDashboard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Topshelf\Topshelf.csproj">
+      <Project>{1EEC6A0D-F213-4716-B5CC-33782BCE1908}</Project>
+      <Name>Topshelf</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

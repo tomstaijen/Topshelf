@@ -39,9 +39,6 @@
     <Reference Include="Stact">
       <HintPath>..\..\lib\Stact\net-4.0\Stact.dll</HintPath>
     </Reference>
-    <Reference Include="Topshelf" Condition="'$(TargetFrameworkVersion)' == 'v3.5'">
-      <HintPath>..\..\build_output\net35\Topshelf.dll</HintPath>
-    </Reference>
     <Reference Include="Topshelf" Condition="'$(TargetFrameworkVersion)' == 'v4.0'">
       <HintPath>..\..\build_output\net40\Topshelf.dll</HintPath>
     </Reference>
@@ -83,6 +80,12 @@
     <Content Include="Views\dashboard.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Topshelf\Topshelf.csproj">
+      <Project>{1EEC6A0D-F213-4716-B5CC-33782BCE1908}</Project>
+      <Name>Topshelf</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
